@@ -1,17 +1,20 @@
-/* Import de la police */
+/* Import des polices */
 @font-face {
     font-family: 'Brigast';
-    src: url('fonts/Brigast-Regular.woff') format('woff');
+    src: url('Brigast-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Oliver';
-    src: url('fonts/Oliver-Regular.woff') format('woff');
+    src: url('Oliver-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
+
 
 /* Reset de base */
 * {
@@ -53,13 +56,33 @@ body {
 }
 
 /* Titre principal */
+/* @nqemie */
+.signature {
+    position: absolute;
+    width: 134px;
+    height: 56px;
+    left: 56.87px;
+    top: 29.18px;
+    
+    font-family: 'Oliver', cursive;  /* Oliver pour la signature */
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 40px;
+    
+    color: #925252;
+    
+    transform: rotate(-2.43deg);
+}
+
+/* Titre principal */
 .main-title {
     position: absolute;
     width: 561px;
     left: calc(50% - 561px/2 + 0.5px);
     top: 63px;
     
-    font-family: 'Brigast', cursive;
+    font-family: 'Brigast', cursive;  /* Brigast pour le titre */
     font-style: normal;
     font-weight: 400;
     font-size: 36px;
@@ -68,4 +91,3 @@ body {
     
     color: #502D2D;
 }
-
