@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: 'Oliver';
-    src: url('./fonts/Oliver-Regular.woff') format('woff');  /* Ajoute ./ */
+    src: url('https://nqemie.github.io/advent-cal/fonts/Oliver-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }
