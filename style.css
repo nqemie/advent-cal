@@ -26,14 +26,16 @@ body {
     background: #E8D5D5;
     font-family: Arial, sans-serif;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .page-container {
     width: 1280px;
-    height: 832px;
+    min-height: 832px;
     background: #E8D5D5;
     position: relative;
     margin: 0 auto;
+    padding-bottom: 50px;
 }
 
 /* @nqemie signature */
@@ -55,6 +57,15 @@ body {
     transform: rotate(-2.43deg);
 }
 
+/* Enveloppe décoration */
+.envelope-decoration {
+    position: absolute;
+    right: 60px;
+    top: 40px;
+    width: 80px;
+    height: auto;
+}
+
 /* Titre principal */
 .main-title {
     position: absolute;
@@ -70,4 +81,194 @@ body {
     text-align: center;
     
     color: #502D2D;
+}
+
+/* Sous-titre */
+.subtitle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 188px;
+    
+    font-family: 'Oliver', cursive;
+    font-size: 16px;
+    color: #502D2D;
+    text-align: center;
+}
+
+/* iPad container */
+.ipad-container {
+    position: absolute;
+    left: 50%;
+    top: 236px;
+    transform: translateX(-50%);
+    width: 333px;
+    height: 468px;
+}
+
+/* iPad frame (mockup) */
+.ipad-frame {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Écran de l'iPad */
+.ipad-screen {
+    position: absolute;
+    width: 310px;
+    height: 437px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #925252;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Status bar iOS */
+.status-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 3;
+}
+
+/* Zone scrollable avec les étoiles */
+.stars-container {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 30px);
+    overflow-y: scroll;
+    padding: 20px 15px;
+    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    align-content: start;
+}
+
+/* Masquer la scrollbar mais garder la fonctionnalité */
+.stars-container::-webkit-scrollbar {
+    display: none;
+}
+
+.stars-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Chaque étoile */
+.star {
+    width: 85px;
+    height: 85px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin: 0 auto;
+}
+
+.star img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Effet hover : zoom + tilt */
+.star:hover {
+    transform: scale(1.15) rotate(5deg);
+}
+
+.star:active {
+    transform: scale(1.05) rotate(3deg);
+}
+
+/* Footer signature */
+.footer-signature {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    font-family: 'Oliver', cursive;
+    font-size: 14px;
+    color: #502D2D;
+}
+
+/* Popup overlay */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-overlay.active {
+    display: flex;
+}
+
+/* Popup content */
+.popup-content {
+    position: relative;
+    background: #EBDDDD;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: popupAppear 0.3s ease;
+}
+
+@keyframes popupAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Bouton fermer */
+.close-popup {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #502D2D;
+    cursor: pointer;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.close-popup:hover {
+    transform: scale(1.2) rotate(90deg);
+}
+
+/* Contenu du popup */
+.popup-gift {
+    text-align: center;
+}
+
+.popup-placeholder {
+    font-family: 'Brigast', cursive;
+    font-size: 24px;
+    color: #502D2D;
+    margin: 20px 0;
 }
