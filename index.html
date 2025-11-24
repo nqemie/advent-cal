@@ -3,22 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Calendrier de l'Avent ✨</title>
+    <title>Mathias' Advent Calendar</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="wrapper">
+    <div class="container">
+        <!-- Signature nqemie en haut à gauche -->
+        <div class="signature">@nqemie</div>
+        
+        <!-- Petite illustration en haut à droite (optionnel) -->
+        <div class="top-illustration">
+            <img src="images/decoration.png" alt="decoration">
+        </div>
+        
+        <!-- Titre principal -->
         <header>
-            <h1>✨ calendrier de l'avent 2025</h1>
-            <p class="subtitle">ouvre une nouvelle porte chaque jour de décembre !</p>
+            <h1>Mathias'<br>Advent<br>Calendar</h1>
+            <p class="subtitle">ouvre une case pour chaque jour de décembre</p>
         </header>
         
-        <main class="calendar" id="calendar">
-            <!-- Les portes seront générées dynamiquement -->
+        <!-- Mockup iPhone avec le calendrier -->
+        <main class="phone-mockup">
+            <div class="phone-screen">
+                <div class="status-bar">
+                    <span>9:41  Tue Apr 1</span>
+                    <div class="icons">
+                        <span>📶 100%</span>
+                    </div>
+                </div>
+                
+                <div class="calendar-grid" id="calendar">
+                    <!-- Les étoiles seront générées par JavaScript -->
+                </div>
+            </div>
         </main>
         
+        <!-- Footer -->
         <footer>
-            <p>fait avec 💝 pour toi</p>
+            <p>made with love by <span class="footer-signature">@nqemie</span></p>
         </footer>
     </div>
     
