@@ -34,7 +34,7 @@ body {
     margin: 0 auto;
 }
 
-/* @nqemie */
+/* @nqemie - VERSION TEST */
 .signature {
     position: absolute;
     width: 134px;
@@ -42,7 +42,7 @@ body {
     left: 56.87px;
     top: 29.18px;
     
-    font-family: 'Oliver', cursive;
+    font-family: Arial, sans-serif;  /* Police système pour tester */
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
@@ -51,5 +51,7 @@ body {
     color: #925252;
     
     transform: rotate(-2.43deg);
+    
+    /* TEST : Ajoute un fond pour voir si l'élément existe */
+    background: yellow;
 }
-
