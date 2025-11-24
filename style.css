@@ -15,7 +15,6 @@
     font-display: swap;
 }
 
-
 /* Reset de base */
 * {
     margin: 0;
@@ -24,7 +23,7 @@
 }
 
 body {
-    background: #E8D5D5;  /* Rose pâle plus prononcé */
+    background: #E8D5D5;
     font-family: Arial, sans-serif;
     min-height: 100vh;
 }
@@ -37,6 +36,7 @@ body {
     margin: 0 auto;
 }
 
+/* @nqemie signature */
 .signature {
     position: absolute;
     width: 134px;
@@ -44,27 +44,7 @@ body {
     left: 56.87px;
     top: 29.18px;
     
-    font-family: 'Caveat', cursive;  /* Police Google similaire */
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 40px;
-    
-    color: #925252;
-    
-    transform: rotate(-2.43deg);
-}
-
-/* Titre principal */
-/* @nqemie */
-.signature {
-    position: absolute;
-    width: 134px;
-    height: 56px;
-    left: 56.87px;
-    top: 29.18px;
-    
-    font-family: 'Oliver', cursive;  /* Oliver pour la signature */
+    font-family: 'Oliver', cursive;
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
@@ -82,7 +62,7 @@ body {
     left: calc(50% - 561px/2 + 0.5px);
     top: 63px;
     
-    font-family: 'Brigast', cursive;  /* Brigast pour le titre */
+    font-family: 'Brigast', cursive;
     font-style: normal;
     font-weight: 400;
     font-size: 36px;
