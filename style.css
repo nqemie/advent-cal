@@ -6,6 +6,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Oliver';
+    src: url('fonts/Oliver-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
 /* Reset de base */
 * {
     margin: 0;
@@ -26,3 +33,23 @@ body {
     position: relative;
     margin: 0 auto;
 }
+
+/* @nqemie */
+.signature {
+    position: absolute;
+    width: 134px;
+    height: 56px;
+    left: 56.87px;
+    top: 29.18px;
+    
+    font-family: 'Oliver', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 40px;
+    
+    color: #925252;
+    
+    transform: rotate(-2.43deg);
+}
+
