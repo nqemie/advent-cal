@@ -3,23 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendrier de l'Avent 2025 🎄</title>
+    <title>Mon Calendrier de l'Avent ✨</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>🎄 Calendrier de l'Avent 2025 🎄</h1>
-        <div class="calendar-grid" id="calendar">
-            <!-- Les cases seront générées dynamiquement avec JavaScript -->
-        </div>
+    <div class="wrapper">
+        <header>
+            <h1>✨ calendrier de l'avent 2025</h1>
+            <p class="subtitle">ouvre une nouvelle porte chaque jour de décembre !</p>
+        </header>
+        
+        <main class="calendar" id="calendar">
+            <!-- Les portes seront générées dynamiquement -->
+        </main>
+        
+        <footer>
+            <p>fait avec 💝 pour toi</p>
+        </footer>
     </div>
     
-    <!-- Modal pour afficher le contenu de chaque jour -->
-    <div id="modal" class="modal">
+    <!-- Modal pour le contenu -->
+    <div class="modal" id="modal">
+        <div class="modal-overlay" id="modalOverlay"></div>
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 id="modal-title">Jour X</h2>
-            <div id="modal-body"></div>
+            <button class="modal-close" id="closeModal">×</button>
+            <div class="modal-body" id="modalBody"></div>
         </div>
     </div>
     
