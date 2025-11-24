@@ -1,7 +1,7 @@
 /* Import des polices */
 @font-face {
     font-family: 'Brigast';
-    src: url('Brigast-Regular.woff2') format('woff2');
+    src: url('fonts/Brigast-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -9,7 +9,7 @@
 
 @font-face {
     font-family: 'Oliver';
-    src: url('Oliver-Regular.woff2') format('woff2');
+    src: url('fonts/Oliver-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
