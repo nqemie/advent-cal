@@ -34,7 +34,6 @@ body {
     margin: 0 auto;
 }
 
-/* @nqemie - TEST avec Brigast */
 .signature {
     position: absolute;
     width: 134px;
@@ -42,7 +41,7 @@ body {
     left: 56.87px;
     top: 29.18px;
     
-    font-family: 'Brigast', cursive;  /* Utilise Brigast au lieu d'Oliver */
+    font-family: 'Caveat', cursive;  /* Police Google similaire */
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
