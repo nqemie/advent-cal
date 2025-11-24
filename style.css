@@ -91,27 +91,27 @@ body {
     color: #502D2D;
 }
 
-/* Sous-titre */
+/* Sous-titre - PLUS PETIT ET CENTRÉ */
 .subtitle {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 200px;
+    top: 198px;  /* Positionné entre le titre (fin ~183px) et l'iPad (début 236px) */
     
-    font-family: 'Creato Display', sans-serif;  /* Changé ici */
-    font-size: 16px;
+    font-family: 'Creato Display', cursive;  /* Ou 'Creato Display' si tu l'as uploadée */
+    font-size: 13px;  /* Était 16px */
     color: #502D2D;
     text-align: center;
 }
 
-/* iPad container */
+/* iPad container - PLUS GRAND */
 .ipad-container {
     position: absolute;
     left: 50%;
     top: 236px;
     transform: translateX(-50%);
-    width: 333px;
-    height: 468px;
+    width: 380px;  /* Était 333px */
+    height: 535px;  /* Était 468px */
 }
 
 /* iPad frame (mockup) */
@@ -123,11 +123,11 @@ body {
     pointer-events: none;
 }
 
-/* Écran de l'iPad */
+/* Écran de l'iPad - PLUS GRAND */
 .ipad-screen {
     position: absolute;
-    width: 310px;
-    height: 437px;
+    width: 355px;  /* Était 310px */
+    height: 500px;  /* Était 437px */
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -137,12 +137,12 @@ body {
     z-index: 1;
 }
 
-/* Status bar iOS */
+/* Status bar iOS - MOINS COLLÉE */
 .status-bar {
     position: absolute;
-    top: 0;
+    top: 8px;  /* Était 0px - ajout d'espace */
     left: 0;
-    width: 90%;
+    width: 100%;
     height: auto;
     z-index: 3;
 }
@@ -150,10 +150,10 @@ body {
 /* Zone scrollable avec les étoiles */
 .stars-container {
     position: absolute;
-    top: 30px;
+    top: 38px;  /* Ajusté pour la nouvelle position de la status bar */
     left: 0;
     width: 100%;
-    height: calc(100% - 30px);
+    height: calc(100% - 38px);
     overflow-y: scroll;
     padding: 20px 15px;
     
