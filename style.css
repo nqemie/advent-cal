@@ -15,6 +15,14 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Creato Display';
+    src: url('fonts/Creato-Display-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* Reset de base */
 * {
     margin: 0;
@@ -90,7 +98,7 @@ body {
     transform: translateX(-50%);
     top: 188px;
     
-    font-family: 'Oliver', cursive;
+    font-family: 'Creato Display', sans-serif;  /* Changé ici */
     font-size: 16px;
     color: #502D2D;
     text-align: center;
@@ -134,7 +142,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 90%;
     height: auto;
     z-index: 3;
 }
