@@ -637,14 +637,14 @@ body {
 
 /* Papier avec message - VERSION DESKTOP */
 .paper-note {
-    width: 500px;  /* Plus grand */
+    width: 500px;
     height: 500px;
     background: url('images/paper-note.png') no-repeat center center;
     background-size: contain;
     display: flex;
-    align-items: flex-start;
+    align-items: center;  /* Centré verticalement */
     justify-content: flex-start;
-    padding: 80px 60px 100px 80px;  /* Plus de padding proportionnel */
+    padding: 80px 60px 100px 80px;
     position: relative;
 }
 
@@ -652,13 +652,13 @@ body {
     font-family: 'La Belle Aurore', cursive;
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;  /* Un peu plus grand */
-    line-height: 19px;
+    font-size: 20px;
+    line-height: 23px;
     color: #000000;
     text-align: left;
     max-width: 100%;
     margin-left: 15px;
-    margin-top: 10px;
+    margin-top: 50px;  /* Encore plus bas */
 }
 
 
@@ -667,17 +667,17 @@ body {
 @media (max-width: 768px) {
     .paper-note {
         width: 85vw;
-        max-width: 400px;  /* Plus grand */
+        max-width: 400px;
         height: auto;
         aspect-ratio: 1 / 1;
         padding: 65px 45px 85px 65px;
     }
     
     .note-text {
-        font-size: 13px;
-        line-height: 16px;
+        font-size: 15px;  /* Plus gros sur mobile */
+        line-height: 18px;
         margin-left: 10px;
-        margin-top: 5px;
+        margin-top: 25px;  /* Plus bas */
     }
     
     .close-message {
@@ -697,8 +697,9 @@ body {
     }
     
     .note-text {
-        font-size: 11px;
-        line-height: 14px;
+        font-size: 13px;
+        line-height: 16px;
         margin-left: 8px;
+        margin-top: 20px;
     }
 }
