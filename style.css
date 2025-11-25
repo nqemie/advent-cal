@@ -694,3 +694,239 @@ body {
     }
 }
 
+/* ========== IPAD PORTRAIT ========== */
+@media (min-width: 768px) and (max-width: 834px) and (orientation: portrait) {
+    .page-container {
+        width: 100%;
+        padding: 20px 15px 60px 15px;
+        min-height: 100vh;
+    }
+    
+    /* Signature @nqemie */
+    .signature {
+        left: 25px;
+        top: 25px;
+        font-size: 22px;
+    }
+    
+    /* Enveloppe */
+    .envelope-decoration {
+        right: 25px;
+        top: 25px;
+        width: 65px;
+    }
+    
+    /* Titre principal */
+    .main-title {
+        position: relative;
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+        margin-top: 70px;
+        font-size: 32px;
+        line-height: 36px;
+    }
+    
+    /* Sous-titre */
+    .subtitle {
+        position: relative;
+        top: 0;
+        margin-top: 18px;
+        font-size: 13px;
+        width: 90%;
+    }
+    
+    /* iPad container */
+    .ipad-container {
+        position: relative;
+        left: 50%;
+        top: 0;
+        margin-top: 25px;
+        width: 85%;
+        max-width: 450px;
+        height: auto;
+        aspect-ratio: 380 / 535;
+        transform: translateX(-50%);
+    }
+    
+    /* iPad screen */
+    .ipad-screen {
+        width: 93%;
+        height: 93%;
+    }
+    
+    /* Status bar */
+    .status-bar {
+        top: 8px;
+    }
+    
+    /* Stars container */
+    .stars-container {
+        top: 35px;
+        height: calc(100% - 35px);
+        padding: 18px 12px;
+        gap: 12px;
+    }
+    
+    /* Étoiles */
+    .star {
+        width: 95px;
+        height: 95px;
+    }
+    
+    /* Footer */
+    .footer-signature {
+        position: relative;
+        margin-top: 35px;
+        bottom: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 13px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Popup gift card */
+    .gift-card {
+        width: 500px;
+        height: auto;
+        aspect-ratio: 332 / 248;
+        padding: 70px 60px;
+    }
+    
+    .gift-text {
+        font-size: 20px;
+        line-height: 18px;
+    }
+    
+    /* Papier note */
+    .paper-note {
+        width: 550px;
+        height: 550px;
+        padding: 85px 65px 105px 65px;
+    }
+    
+    .note-text {
+        font-size: 22px;
+        line-height: 25px;
+    }
+}
+
+/* ========== IPAD PAYSAGE ========== */
+@media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+    .page-container {
+        width: 100%;
+        padding: 15px 20px 50px 20px;
+        min-height: 100vh;
+    }
+    
+    /* Signature @nqemie */
+    .signature {
+        left: 30px;
+        top: 20px;
+        font-size: 22px;
+    }
+    
+    /* Enveloppe */
+    .envelope-decoration {
+        right: 30px;
+        top: 20px;
+        width: 70px;
+    }
+    
+    /* Titre principal */
+    .main-title {
+        position: relative;
+        width: 550px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+        margin-top: 50px;
+        font-size: 32px;
+        line-height: 36px;
+    }
+    
+    /* Sous-titre */
+    .subtitle {
+        position: relative;
+        top: 0;
+        margin-top: 15px;
+        font-size: 13px;
+    }
+    
+    /* iPad container - Plus compact en paysage */
+    .ipad-container {
+        position: relative;
+        left: 50%;
+        top: 0;
+        margin-top: 18px;
+        width: 300px;
+        height: auto;
+        aspect-ratio: 380 / 535;
+        transform: translateX(-50%);
+    }
+    
+    /* iPad screen */
+    .ipad-screen {
+        width: 93%;
+        height: 93%;
+    }
+    
+    /* Status bar */
+    .status-bar {
+        top: 6px;
+    }
+    
+    /* Stars container */
+    .stars-container {
+        top: 28px;
+        height: calc(100% - 28px);
+        padding: 14px 10px;
+        gap: 10px;
+    }
+    
+    /* Étoiles plus petites */
+    .star {
+        width: 65px;
+        height: 65px;
+    }
+    
+    /* Footer */
+    .footer-signature {
+        position: relative;
+        margin-top: 25px;
+        bottom: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 13px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Popup gift card */
+    .gift-card {
+        width: 500px;
+        height: auto;
+        aspect-ratio: 332 / 248;
+        padding: 70px 60px;
+    }
+    
+    .gift-text {
+        font-size: 20px;
+        line-height: 18px;
+    }
+    
+    /* Papier note */
+    .paper-note {
+        width: 550px;
+        height: 550px;
+        padding: 85px 65px 105px 65px;
+    }
+    
+    .note-text {
+        font-size: 22px;
+        line-height: 25px;
+    }
+}
+
