@@ -635,16 +635,16 @@ body {
     background: #e0c9c9;
 }
 
-/* VERSION ULTRA-COMPACTE DESKTOP */
+/* Papier avec message - VERSION DESKTOP */
 .paper-note {
-    width: 300px;
-    height: 300px;
+    width: 500px;  /* Plus grand */
+    height: 500px;
     background: url('images/paper-note.png') no-repeat center center;
     background-size: contain;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 50px 30px 70px 55px;
+    padding: 80px 60px 100px 80px;  /* Plus de padding proportionnel */
     position: relative;
 }
 
@@ -652,12 +652,12 @@ body {
     font-family: 'La Belle Aurore', cursive;
     font-style: normal;
     font-weight: 400;
-    font-size: 12px;  /* Ultra petit */
-    line-height: 14px;
+    font-size: 16px;  /* Un peu plus grand */
+    line-height: 19px;
     color: #000000;
     text-align: left;
     max-width: 100%;
-    margin-left: 15px;  /* Plus décalé à droite */
+    margin-left: 15px;
     margin-top: 10px;
 }
 
@@ -666,18 +666,18 @@ body {
 /* Responsive mobile */
 @media (max-width: 768px) {
     .paper-note {
-        width: 75vw;
-        max-width: 280px;
+        width: 85vw;
+        max-width: 400px;  /* Plus grand */
         height: auto;
         aspect-ratio: 1 / 1;
-        padding: 50px 35px 70px 50px;  /* Plus de padding à gauche */
+        padding: 65px 45px 85px 65px;
     }
     
     .note-text {
-        font-size: 11px;  /* Très petit */
-        line-height: 13px;
-        margin-left: 8px;  /* Décalage vers la droite */
-        margin-top: 3px;
+        font-size: 13px;
+        line-height: 16px;
+        margin-left: 10px;
+        margin-top: 5px;
     }
     
     .close-message {
@@ -688,17 +688,17 @@ body {
     }
 }
 
-/* Pour très petits écrans */
+/* Pour petits écrans */
 @media (max-width: 380px) {
     .paper-note {
-        width: 70vw;
-        max-width: 250px;
-        padding: 45px 30px 65px 45px;
+        width: 80vw;
+        max-width: 320px;
+        padding: 55px 40px 75px 55px;
     }
     
     .note-text {
-        font-size: 10px;  /* Ultra petit */
-        line-height: 12px;
-        margin-left: 5px;
+        font-size: 11px;
+        line-height: 14px;
+        margin-left: 8px;
     }
 }
