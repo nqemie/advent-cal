@@ -112,6 +112,8 @@ window.addEventListener('load', createSnowflakes);
 
 // POPUP MESSAGE SECRET (enveloppe)
 const envelopeBtn = document.getElementById('envelopeBtn');
+console.log('Enveloppe trouvée:', envelopeBtn);  // TEST
+
 const messagePopup = document.getElementById('messagePopup');
 const closeMessage = document.getElementById('closeMessage');
 
