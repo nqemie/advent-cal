@@ -694,26 +694,27 @@ body {
     }
 }
 
-/* ========== IPAD PORTRAIT ========== */
+/* ========== IPAD PORTRAIT (style iPhone) ========== */
 @media (min-width: 768px) and (max-width: 834px) and (orientation: portrait) {
     .page-container {
         width: 100%;
-        padding: 20px 15px 60px 15px;
         min-height: 100vh;
+        padding: 20px 10px 80px 10px;
     }
     
     /* Signature @nqemie */
     .signature {
-        left: 25px;
-        top: 25px;
-        font-size: 22px;
+        left: 20px;
+        top: 20px;
+        font-size: 20px;
+        width: auto;
     }
     
     /* Enveloppe */
     .envelope-decoration {
-        right: 25px;
+        right: 20px;
         top: 25px;
-        width: 65px;
+        width: 55px;
     }
     
     /* Titre principal */
@@ -737,17 +738,16 @@ body {
         width: 90%;
     }
     
-    /* iPad container */
+    /* iPad container - Comme iPhone mais plus grand */
     .ipad-container {
         position: relative;
         left: 50%;
         top: 0;
         margin-top: 25px;
-        width: 85%;
+        width: 90%;
         max-width: 450px;
         height: auto;
         aspect-ratio: 380 / 535;
-        transform: translateX(-50%);
     }
     
     /* iPad screen */
@@ -769,10 +769,10 @@ body {
         gap: 12px;
     }
     
-    /* Étoiles */
+    /* Étoiles un peu plus grandes que iPhone */
     .star {
-        width: 95px;
-        height: 95px;
+        width: 90px;
+        height: 90px;
     }
     
     /* Footer */
@@ -789,29 +789,48 @@ body {
     
     /* Popup gift card */
     .gift-card {
-        width: 500px;
+        width: 85vw;
+        max-width: 500px;
         height: auto;
         aspect-ratio: 332 / 248;
-        padding: 70px 60px;
+        padding: 65px 60px;
     }
     
     .gift-text {
-        font-size: 20px;
-        line-height: 18px;
+        font-size: 18px;
+        line-height: 17px;
+    }
+    
+    /* Bouton fermer popup */
+    .close-popup {
+        top: -45px;
+        width: 42px;
+        height: 42px;
+        font-size: 30px;
     }
     
     /* Papier note */
     .paper-note {
-        width: 550px;
-        height: 550px;
-        padding: 85px 65px 105px 65px;
+        width: 85vw;
+        max-width: 500px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        padding: 75px 55px 95px 55px;
     }
     
     .note-text {
-        font-size: 22px;
-        line-height: 25px;
+        font-size: 18px;
+        line-height: 21px;
+    }
+    
+    .close-message {
+        top: -45px;
+        width: 42px;
+        height: 42px;
+        font-size: 30px;
     }
 }
+
 
 /* ========== IPAD PAYSAGE ========== */
 @media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
