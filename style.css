@@ -309,13 +309,14 @@ body {
     font-family: 'La Belle Aurore', cursive;
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;  /* Réduit de 24px à 20px */
-    line-height: 18px;  /* Ajusté aussi */
+    font-size: 18px;  /* Encore plus petit */
+    line-height: 16px;
     text-align: center;
     color: #000000;
     margin: 0;
     max-width: 100%;
 }
+
 
 /* Responsive pour mobile */
 @media (max-width: 768px) {
