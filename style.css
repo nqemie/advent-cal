@@ -635,16 +635,16 @@ body {
     background: #e0c9c9;
 }
 
-/* Papier avec message - VERSION DESKTOP */
+/* VERSION ULTRA-COMPACTE DESKTOP */
 .paper-note {
-    width: 350px;  /* Encore plus petit */
-    height: 350px;
+    width: 300px;
+    height: 300px;
     background: url('images/paper-note.png') no-repeat center center;
     background-size: contain;
     display: flex;
-    align-items: flex-start;  /* Aligné en haut */
-    justify-content: flex-start;  /* Aligné à gauche */
-    padding: 60px 40px 80px 60px;  /* Plus de padding à gauche pour décaler à droite */
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 50px 30px 70px 55px;
     position: relative;
 }
 
@@ -652,13 +652,13 @@ body {
     font-family: 'La Belle Aurore', cursive;
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;  /* Beaucoup plus petit */
-    line-height: 16px;  /* Plus serré */
+    font-size: 12px;  /* Ultra petit */
+    line-height: 14px;
     color: #000000;
     text-align: left;
     max-width: 100%;
-    margin-left: 10px;  /* Décalage vers la droite */
-    margin-top: 5px;  /* Petit décalage vers le bas */
+    margin-left: 15px;  /* Plus décalé à droite */
+    margin-top: 10px;
 }
 
 
