@@ -637,14 +637,14 @@ body {
 
 /* Papier avec message - VERSION DESKTOP */
 .paper-note {
-    width: 400px;  /* Réduit de 500px à 400px */
-    height: 400px;  /* Réduit de 500px à 400px */
+    width: 350px;  /* Encore plus petit */
+    height: 350px;
     background: url('images/paper-note.png') no-repeat center center;
     background-size: contain;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 70px 55px 90px 55px;  /* Plus d'espace en bas */
+    align-items: flex-start;  /* Aligné en haut */
+    justify-content: flex-start;  /* Aligné à gauche */
+    padding: 60px 40px 80px 60px;  /* Plus de padding à gauche pour décaler à droite */
     position: relative;
 }
 
@@ -652,27 +652,32 @@ body {
     font-family: 'La Belle Aurore', cursive;
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;  /* Réduit de 22px à 18px */
-    line-height: 21px;  /* Réduit de 25px à 21px */
+    font-size: 14px;  /* Beaucoup plus petit */
+    line-height: 16px;  /* Plus serré */
     color: #000000;
     text-align: left;
     max-width: 100%;
+    margin-left: 10px;  /* Décalage vers la droite */
+    margin-top: 5px;  /* Petit décalage vers le bas */
 }
+
 
 
 /* Responsive mobile */
 @media (max-width: 768px) {
     .paper-note {
-        width: 80vw;
-        max-width: 300px;
+        width: 75vw;
+        max-width: 280px;
         height: auto;
         aspect-ratio: 1 / 1;
-        padding: 55px 40px 75px 40px;  /* Ajusté */
+        padding: 50px 35px 70px 50px;  /* Plus de padding à gauche */
     }
     
     .note-text {
-        font-size: 13px;  /* Plus petit */
-        line-height: 16px;
+        font-size: 11px;  /* Très petit */
+        line-height: 13px;
+        margin-left: 8px;  /* Décalage vers la droite */
+        margin-top: 3px;
     }
     
     .close-message {
@@ -683,16 +688,17 @@ body {
     }
 }
 
-/* Pour très petits écrans (iPhone SE, etc.) */
+/* Pour très petits écrans */
 @media (max-width: 380px) {
     .paper-note {
-        width: 75vw;
-        max-width: 260px;
-        padding: 50px 35px 70px 35px;
+        width: 70vw;
+        max-width: 250px;
+        padding: 45px 30px 65px 45px;
     }
     
     .note-text {
-        font-size: 11px;
-        line-height: 14px;
+        font-size: 10px;  /* Ultra petit */
+        line-height: 12px;
+        margin-left: 5px;
     }
 }
