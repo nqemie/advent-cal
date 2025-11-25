@@ -635,16 +635,16 @@ body {
     background: #e0c9c9;
 }
 
-/* Papier avec message */
+/* Papier avec message - VERSION DESKTOP */
 .paper-note {
-    width: 500px;
-    height: 500px;
+    width: 400px;  /* Réduit de 500px à 400px */
+    height: 400px;  /* Réduit de 500px à 400px */
     background: url('images/paper-note.png') no-repeat center center;
     background-size: contain;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 80px 60px;
+    padding: 70px 55px 90px 55px;  /* Plus d'espace en bas */
     position: relative;
 }
 
@@ -652,26 +652,27 @@ body {
     font-family: 'La Belle Aurore', cursive;
     font-style: normal;
     font-weight: 400;
-    font-size: 22px;
-    line-height: 25px;
+    font-size: 18px;  /* Réduit de 22px à 18px */
+    line-height: 21px;  /* Réduit de 25px à 21px */
     color: #000000;
     text-align: left;
     max-width: 100%;
 }
 
+
 /* Responsive mobile */
 @media (max-width: 768px) {
     .paper-note {
-        width: 90vw;
-        max-width: 400px;
+        width: 80vw;
+        max-width: 300px;
         height: auto;
         aspect-ratio: 1 / 1;
-        padding: 60px 40px;
+        padding: 55px 40px 75px 40px;  /* Ajusté */
     }
     
     .note-text {
-        font-size: 16px;
-        line-height: 20px;
+        font-size: 13px;  /* Plus petit */
+        line-height: 16px;
     }
     
     .close-message {
@@ -679,5 +680,19 @@ body {
         width: 40px;
         height: 40px;
         font-size: 30px;
+    }
+}
+
+/* Pour très petits écrans (iPhone SE, etc.) */
+@media (max-width: 380px) {
+    .paper-note {
+        width: 75vw;
+        max-width: 260px;
+        padding: 50px 35px 70px 35px;
+    }
+    
+    .note-text {
+        font-size: 11px;
+        line-height: 14px;
     }
 }
