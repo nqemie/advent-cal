@@ -582,7 +582,7 @@ body {
     justify-content: center;
     align-items: center;
 }
-
+ 
 .message-overlay.active {
     display: flex;
 }
