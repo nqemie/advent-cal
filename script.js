@@ -79,3 +79,34 @@ document.addEventListener('keydown', function(e) {
         popup.classList.remove('active');
     }
 });
+
+// EFFET NEIGE
+function createSnowflakes() {
+    const snowflakeChars = ['❄', '❅', '❆', '✻', '✼', '❉'];
+    const snowContainer = document.body;
+    
+    // Créer 50 flocons de neige
+    for (let i = 0; i < 50; i++) {
+        const snowflake = document.createElement('div');
+        snowflake.className = 'snowflake';
+        snowflake.innerHTML = snowflakeChars[Math.floor(Math.random() * snowflakeChars.length)];
+        
+        // Position aléatoire
+        snowflake.style.left = Math.random() * 100 + '%';
+        
+        // Taille aléatoire
+        snowflake.style.fontSize = (Math.random() * 1.5 + 0.5) + 'em';
+        
+        // Délai aléatoire
+        snowflake.style.animationDelay = Math.random() * 10 + 's';
+        
+        // Durée aléatoire
+        snowflake.style.animationDuration = (Math.random() * 10 + 5) + 's';
+        
+        snowContainer.appendChild(snowflake);
+    }
+}
+
+// Lancer la neige quand la page est chargée
+window.addEventListener('load', createSnowflakes);
+
