@@ -643,8 +643,8 @@ body {
     background-size: contain;
     display: flex;
     align-items: center;  /* Centré verticalement */
-    justify-content: flex-start;
-    padding: 80px 60px 100px 80px;
+    justify-content: center;  /* Centré horizontalement */
+    padding: 80px 60px 100px 60px;  /* Padding égal gauche/droite */
     position: relative;
 }
 
@@ -655,10 +655,9 @@ body {
     font-size: 20px;
     line-height: 23px;
     color: #000000;
-    text-align: left;
+    text-align: center;  /* Texte centré */
     max-width: 100%;
-    margin-left: 15px;
-    margin-top: 50px;  /* Encore plus bas */
+    margin: 0;  /* Pas de margin */
 }
 
 
@@ -670,14 +669,14 @@ body {
         max-width: 400px;
         height: auto;
         aspect-ratio: 1 / 1;
-        padding: 65px 45px 85px 65px;
+        padding: 65px 45px 85px 45px;  /* Padding égal */
     }
     
     .note-text {
-        font-size: 15px;  /* Plus gros sur mobile */
+        font-size: 15px;
         line-height: 18px;
-        margin-left: 10px;
-        margin-top: 25px;  /* Plus bas */
+        text-align: center;
+        margin: 0;
     }
     
     .close-message {
@@ -693,13 +692,13 @@ body {
     .paper-note {
         width: 80vw;
         max-width: 320px;
-        padding: 55px 40px 75px 55px;
+        padding: 55px 40px 75px 40px;
     }
     
     .note-text {
         font-size: 13px;
         line-height: 16px;
-        margin-left: 8px;
-        margin-top: 20px;
+        text-align: center;
+        margin: 0;
     }
 }
