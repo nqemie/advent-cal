@@ -99,27 +99,27 @@ body {
     color: #502D2D;
 }
 
-/* Sous-titre - PLUS PETIT ET CENTRÉ */
+/* Sous-titre */
 .subtitle {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 198px;  /* Positionné entre le titre (fin ~183px) et l'iPad (début 236px) */
+    top: 198px;
     
-    font-family: 'Creato Display', cursive;  /* Ou 'Creato Display' si tu l'as uploadée */
-    font-size: 13px;  /* Était 16px */
+    font-family: 'Creato Display', sans-serif;
+    font-size: 13px;
     color: #502D2D;
     text-align: center;
 }
 
-/* iPad container - PLUS GRAND */
+/* iPad container */
 .ipad-container {
     position: absolute;
     left: 50%;
     top: 236px;
     transform: translateX(-50%);
-    width: 380px;  /* Était 333px */
-    height: 535px;  /* Était 468px */
+    width: 380px;
+    height: 535px;
 }
 
 /* iPad frame (mockup) */
@@ -131,11 +131,11 @@ body {
     pointer-events: none;
 }
 
-/* Écran de l'iPad - PLUS GRAND */
+/* Écran de l'iPad */
 .ipad-screen {
     position: absolute;
-    width: 355px;  /* Était 310px */
-    height: 500px;  /* Était 437px */
+    width: 355px;
+    height: 500px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -145,10 +145,10 @@ body {
     z-index: 1;
 }
 
-/* Status bar iOS - MOINS COLLÉE */
+/* Status bar iOS */
 .status-bar {
     position: absolute;
-    top: 8px;  /* Était 0px - ajout d'espace */
+    top: 8px;
     left: 0;
     width: 100%;
     height: auto;
@@ -158,7 +158,7 @@ body {
 /* Zone scrollable avec les étoiles */
 .stars-container {
     position: absolute;
-    top: 38px;  /* Ajusté pour la nouvelle position de la status bar */
+    top: 38px;
     left: 0;
     width: 100%;
     height: calc(100% - 38px);
@@ -226,7 +226,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8);
     z-index: 1000;
     justify-content: center;
     align-items: center;
@@ -239,12 +239,11 @@ body {
 /* Popup content */
 .popup-content {
     position: relative;
-    background: #EBDDDD;
-    border-radius: 20px;
-    padding: 40px;
-    max-width: 500px;
-    width: 90%;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    max-width: 90%;
+    max-height: 90vh;
     animation: popupAppear 0.3s ease;
 }
 
@@ -262,29 +261,91 @@ body {
 /* Bouton fermer */
 .close-popup {
     position: absolute;
-    top: 15px;
-    right: 15px;
-    background: none;
+    top: -50px;
+    right: 0px;
+    background: #EBDDDD;
     border: none;
-    font-size: 30px;
+    font-size: 35px;
     color: #502D2D;
     cursor: pointer;
     line-height: 1;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: transform 0.2s ease;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .close-popup:hover {
-    transform: scale(1.2) rotate(90deg);
+    transform: scale(1.15) rotate(90deg);
+    background: #e0c9c9;
 }
 
 /* Contenu du popup */
 .popup-gift {
     text-align: center;
+    position: relative;
 }
 
-.popup-placeholder {
-    font-family: 'Brigast', cursive;
+/* Carte cadeau */
+.gift-card {
+    position: relative;
+    width: 332px;
+    height: 248px;
+    background: url('images/gift-card.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 35px;
+    margin: 0 auto;
+}
+
+.gift-text {
+    font-family: 'La Belle Aurore', cursive;
+    font-style: normal;
+    font-weight: 400;
     font-size: 24px;
-    color: #502D2D;
-    margin: 20px 0;
+    line-height: 20px;
+    text-align: center;
+    color: #000000;
+    margin: 0;
+    max-width: 100%;
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .page-container {
+        width: 100%;
+        padding: 20px;
+    }
+    
+    .ipad-container {
+        width: 90%;
+        height: auto;
+        aspect-ratio: 380 / 535;
+    }
+    
+    .gift-card {
+        width: 90vw;
+        max-width: 332px;
+        height: auto;
+        aspect-ratio: 332 / 248;
+    }
+    
+    .gift-text {
+        font-size: 18px;
+        line-height: 18px;
+    }
+    
+    .close-popup {
+        top: -45px;
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+    }
 }
