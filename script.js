@@ -2,7 +2,7 @@
 const stars = document.querySelectorAll('.star');
 const popup = document.getElementById('popup');
 const closePopup = document.getElementById('closePopup');
-const popupGift = document.querySelector('.popup-gift');
+const popupGift = document.querySelector('.popup-gift'); 
 
 // Textes des cadeaux
 const gifts = {
