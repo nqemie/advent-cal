@@ -462,3 +462,98 @@ body {
         line-height: 13px;
     }
 }
+
+/* EFFET NEIGE */
+.snowflake {
+    position: fixed;
+    top: -10px;
+    z-index: 9999;
+    user-select: none;
+    cursor: default;
+    animation-name: snowfall;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    color: white;
+    font-size: 1em;
+    opacity: 0.8;
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(0vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0.3;
+    }
+}
+
+/* Différentes vitesses pour plus de réalisme */
+.snowflake:nth-of-type(0) {
+    left: 1%;
+    animation-delay: 0s;
+    animation-duration: 6s;
+}
+
+.snowflake:nth-of-type(1) {
+    left: 10%;
+    animation-delay: 1s;
+    animation-duration: 8s;
+}
+
+.snowflake:nth-of-type(2) {
+    left: 20%;
+    animation-delay: 0.5s;
+    animation-duration: 10s;
+}
+
+.snowflake:nth-of-type(3) {
+    left: 30%;
+    animation-delay: 2s;
+    animation-duration: 7s;
+}
+
+.snowflake:nth-of-type(4) {
+    left: 40%;
+    animation-delay: 0s;
+    animation-duration: 9s;
+}
+
+.snowflake:nth-of-type(5) {
+    left: 50%;
+    animation-delay: 1.5s;
+    animation-duration: 11s;
+}
+
+.snowflake:nth-of-type(6) {
+    left: 60%;
+    animation-delay: 3s;
+    animation-duration: 8s;
+}
+
+.snowflake:nth-of-type(7) {
+    left: 70%;
+    animation-delay: 0.5s;
+    animation-duration: 10s;
+}
+
+.snowflake:nth-of-type(8) {
+    left: 80%;
+    animation-delay: 2s;
+    animation-duration: 9s;
+}
+
+.snowflake:nth-of-type(9) {
+    left: 90%;
+    animation-delay: 1s;
+    animation-duration: 7s;
+}
+
+.snowflake:nth-of-type(10) {
+    left: 95%;
+    animation-delay: 0s;
+    animation-duration: 12s;
+}
+
