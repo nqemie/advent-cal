@@ -141,11 +141,10 @@ body {
 .ipad-container {
     position: absolute;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: min(380px, 30vw);
-    height: auto;
-    max-height: 60vh;
+    top: 236px;
+    transform: translateX(-50%);
+    width: 380px;
+    height: 535px;
     z-index: 10;
 }
 
@@ -161,8 +160,8 @@ body {
 /* Écran de l'iPad */
 .ipad-screen {
     position: absolute;
-    width: 93%;
-    height: 93%;
+    width: 355px;
+    height: 500px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -592,9 +591,10 @@ body {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 85vw;
-        max-width: 350px;
-        max-height: 55vh;
+        width: 90vw;
+        max-width: 380px;
+        height: auto;
+        aspect-ratio: 380 / 535;
         z-index: 10;
     }
     
