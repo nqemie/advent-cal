@@ -407,17 +407,24 @@ body {
         position: relative;
         margin-top: 20px;
         bottom: auto;
+        left: 50%;
+        transform: translateX(-50%);
         font-size: 12px;
+        width: 100%;
+        text-align: center;
     }
+
     
+
     /* Popup gift card */
     .gift-card {
         width: 85vw;
         max-width: 332px;
         height: auto;
         aspect-ratio: 332 / 248;
-        padding: 50px 40px;
+        padding: 55px 55px;  /* Plus d'espace sur les côtés */
     }
+
     
     .gift-text {
         font-size: 16px;
@@ -446,8 +453,9 @@ body {
     }
     
     .gift-card {
-        padding: 40px 30px;
+        padding: 45px 45px;  /* Plus d'espace même sur petits écrans */
     }
+
     
     .gift-text {
         font-size: 14px;
