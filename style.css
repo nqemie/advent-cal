@@ -42,16 +42,24 @@ body {
     background: #E8D5D5;
     font-family: Arial, sans-serif;
     min-height: 100vh;
+    height: 100vh;
     overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .page-container {
     width: 1280px;
-    min-height: 832px;
+    height: 100vh;
+    max-height: 900px;
     background: #E8D5D5;
     position: relative;
     margin: 0 auto;
-    padding-bottom: 50px;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* @nqemie signature */
@@ -71,16 +79,15 @@ body {
     color: #925252;
     
     transform: rotate(-2.43deg);
-    cursor: pointer;  /* AJOUTÉ */
-    transition: all 0.3s ease;  /* AJOUTÉ */
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .signature:hover {
-    transform: rotate(0deg) scale(1.15);  /* Redresse + agrandit */
-    color: #7a3d3d;  /* Un peu plus foncé */
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));  /* Ombre */
+    transform: rotate(0deg) scale(1.15);
+    color: #7a3d3d;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
 }
-
 
 /* Enveloppe décoration */
 .envelope-decoration {
@@ -89,22 +96,28 @@ body {
     top: 40px;
     width: 80px;
     height: auto;
-    z-index: 100;  /* AJOUTÉ */
-    cursor: pointer;  /* AJOUTÉ */
+    z-index: 100;
+    cursor: pointer;
     transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.envelope-decoration:hover {
+    transform: scale(1.1) rotate(-5deg);
+    filter: brightness(1.1);
 }
 
 /* Titre principal */
 .main-title {
     position: absolute;
     width: 561px;
-    left: calc(50% - 561px/2 + 0.5px);
-    top: 63px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 8vh;
     
     font-family: 'Brigast', cursive;
     font-style: normal;
     font-weight: 400;
-    font-size: 36px;
+    font-size: clamp(28px, 3vw, 36px);
     line-height: 40px;
     text-align: center;
     
@@ -116,10 +129,10 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 198px;
+    top: 22vh;
     
     font-family: 'Creato Display', sans-serif;
-    font-size: 13px;
+    font-size: clamp(11px, 1.2vw, 13px);
     color: #502D2D;
     text-align: center;
 }
@@ -128,10 +141,12 @@ body {
 .ipad-container {
     position: absolute;
     left: 50%;
-    top: 236px;
-    transform: translateX(-50%);
-    width: 380px;
-    height: 535px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(380px, 30vw);
+    height: auto;
+    max-height: 60vh;
+    z-index: 10;
 }
 
 /* iPad frame (mockup) */
@@ -146,8 +161,8 @@ body {
 /* Écran de l'iPad */
 .ipad-screen {
     position: absolute;
-    width: 355px;
-    height: 500px;
+    width: 93%;
+    height: 93%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -221,16 +236,19 @@ body {
 /* Footer signature */
 .footer-signature {
     position: absolute;
-    bottom: 20px;
+    bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
     
     font-family: 'Oliver', cursive;
     font-size: 14px;
     color: #502D2D;
+    z-index: 100;
 }
 
-/* Popup overlay */
+/* ========== POPUPS ========== */
+
+/* Popup overlay cadeaux */
 .popup-overlay {
     display: none;
     position: fixed;
@@ -303,6 +321,7 @@ body {
     position: relative;
 }
 
+/* Carte cadeau */
 .gift-card {
     position: relative;
     width: 332px;
@@ -312,7 +331,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 70px 60px;  /* Encore plus d'espace */
+    padding: 70px 60px;
     margin: 0 auto;
 }
 
@@ -320,7 +339,7 @@ body {
     font-family: 'La Belle Aurore', cursive;
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;  /* Encore plus petit */
+    font-size: 18px;
     line-height: 16px;
     text-align: center;
     color: #000000;
@@ -328,161 +347,98 @@ body {
     max-width: 100%;
 }
 
+/* Popup message secret */
+.message-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.message-overlay.active {
+    display: flex;
+}
 
-/* RESPONSIVE MOBILE */
-@media (max-width: 768px) {
-    body {
-        overflow-x: hidden;
-    }
-    
-    .page-container {
-        width: 100%;
-        min-height: 100vh;
-        padding: 20px 10px;
-    }
-    
-    /* Signature @nqemie */
-    .signature {
-        left: 20px;
-        top: 20px;
-        font-size: 18px;
-        width: auto;
-    }
-    
-    /* Enveloppe */
-    .envelope-decoration {
-        right: 20px;
-        top: 25px;
-        width: 50px;
-        z-index: 100;  /* AJOUTÉ */
-    }
+.message-content {
+    position: relative;
+    animation: messageAppear 0.4s ease;
+}
 
-    
-    /* Titre principal */
-    .main-title {
-        position: relative;
-        width: 90%;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 0;
-        margin-top: 60px;
-        font-size: 28px;
-        line-height: 32px;
+@keyframes messageAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8) rotate(-5deg);
     }
-    
-    /* Sous-titre */
-    .subtitle {
-        position: relative;
-        top: 0;
-        margin-top: 15px;
-        font-size: 12px;
-        width: 90%;
-    }
-    
-    /* iPad container */
-    .ipad-container {
-        position: relative;
-        left: 50%;
-        top: 0;
-        margin-top: 20px;
-        width: 95%;
-        max-width: 380px;
-        height: auto;
-        aspect-ratio: 380 / 535;
-        z-index: 10;  /* ✅ AJOUTE CETTE LIGNE */
-    }
-    
-    /* iPad screen */
-    .ipad-screen {
-        width: 93%;
-        height: 93%;
-    }
-    
-    /* Status bar */
-    .status-bar {
-        top: 6px;
-    }
-    
-    /* Stars container */
-    .stars-container {
-        top: 30px;
-        height: calc(100% - 30px);
-        padding: 15px 10px;
-        gap: 10px;
-    }
-    
-    /* Étoiles plus petites sur mobile */
-    .star {
-        width: 70px;
-        height: 70px;
-    }
-    
-    /* Footer */
-    .footer-signature {
-        position: relative;
-        margin-top: 20px;
-        bottom: auto;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 12px;
-        width: 100%;
-        text-align: center;
-    }
-
-    
-
-    /* Popup gift card */
-    .gift-card {
-        width: 85vw;
-        max-width: 332px;
-        height: auto;
-        aspect-ratio: 332 / 248;
-        padding: 55px 55px;  /* Plus d'espace sur les côtés */
-    }
-
-    
-    .gift-text {
-        font-size: 16px;
-        line-height: 15px;
-    }
-    
-    /* Bouton fermer popup */
-    .close-popup {
-        top: -45px;
-        width: 40px;
-        height: 40px;
-        font-size: 28px;
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
     }
 }
 
-/* Pour les très petits écrans */
-@media (max-width: 380px) {
-    .main-title {
-        font-size: 24px;
-        line-height: 28px;
-    }
-    
-    .star {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .gift-card {
-        padding: 45px 45px;  /* Plus d'espace même sur petits écrans */
-    }
-
-    
-    .gift-text {
-        font-size: 14px;
-        line-height: 13px;
-    }
+/* Bouton fermer message */
+.close-message {
+    position: absolute;
+    top: -50px;
+    right: 0px;
+    background: #EBDDDD;
+    border: none;
+    font-size: 35px;
+    color: #502D2D;
+    cursor: pointer;
+    line-height: 1;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* EFFET NEIGE */
+.close-message:hover {
+    transform: scale(1.15) rotate(90deg);
+    background: #e0c9c9;
+}
+
+/* Papier avec message */
+.paper-note {
+    width: 500px;
+    height: 500px;
+    background: url('images/paper-note.png') no-repeat center center;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 60px 100px 60px;
+    position: relative;
+}
+
+.note-text {
+    font-family: 'La Belle Aurore', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+    text-align: center;
+    max-width: 100%;
+    margin: 0;
+}
+
+/* ========== EFFET NEIGE ========== */
+
 .snowflake {
     position: fixed;
     top: -10px;
-    z-index: 1;  /* ✅ Passe en arrière-plan */
+    z-index: 1;
     user-select: none;
     cursor: default;
     animation-name: snowfall;
@@ -572,120 +528,147 @@ body {
     animation-duration: 12s;
 }
 
-/* ENVELOPPE HOVER */
-.envelope-decoration {
-    cursor: pointer;
-    transition: transform 0.3s ease, filter 0.3s ease;
-}
+/* ========== RESPONSIVE MOBILE ========== */
 
-.envelope-decoration:hover {
-    transform: scale(1.1) rotate(-5deg);
-    filter: brightness(1.1);
-}
-
-/* POPUP MESSAGE SECRET */
-.message-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 2000;
-    justify-content: center;
-    align-items: center;
-}
- 
-.message-overlay.active {
-    display: flex;
-}
-
-.message-content {
-    position: relative;
-    animation: messageAppear 0.4s ease;
-}
-
-@keyframes messageAppear {
-    from {
-        opacity: 0;
-        transform: scale(0.8) rotate(-5deg);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1) rotate(0deg);
-    }
-}
-
-/* Bouton fermer message */
-.close-message {
-    position: absolute;
-    top: -50px;
-    right: 0px;
-    background: #EBDDDD;
-    border: none;
-    font-size: 35px;
-    color: #502D2D;
-    cursor: pointer;
-    line-height: 1;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s ease;
-    z-index: 10;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.close-message:hover {
-    transform: scale(1.15) rotate(90deg);
-    background: #e0c9c9;
-}
-
-/* Papier avec message - VERSION DESKTOP */
-.paper-note {
-    width: 500px;
-    height: 500px;
-    background: url('images/paper-note.png') no-repeat center center;
-    background-size: contain;
-    display: flex;
-    align-items: center;  /* Centré verticalement */
-    justify-content: center;  /* Centré horizontalement */
-    padding: 80px 60px 100px 60px;  /* Padding égal gauche/droite */
-    position: relative;
-}
-
-.note-text {
-    font-family: 'La Belle Aurore', cursive;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 23px;
-    color: #000000;
-    text-align: center;  /* Texte centré */
-    max-width: 100%;
-    margin: 0;  /* Pas de margin */
-}
-
-
-
-/* Responsive mobile */
 @media (max-width: 768px) {
+    body {
+        height: 100vh;
+        overflow: hidden;
+    }
+    
+    .page-container {
+        width: 100%;
+        height: 100vh;
+        max-height: none;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    /* Signature @nqemie */
+    .signature {
+        position: absolute;
+        left: 15px;
+        top: 15px;
+        font-size: 18px;
+        width: auto;
+        z-index: 101;
+    }
+    
+    /* Enveloppe */
+    .envelope-decoration {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        width: 40px;
+        z-index: 101;
+    }
+    
+    /* Titre principal */
+    .main-title {
+        position: absolute;
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 8vh;
+        font-size: clamp(22px, 5vw, 28px);
+        line-height: 1.2;
+    }
+    
+    /* Sous-titre */
+    .subtitle {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 18vh;
+        font-size: 11px;
+        width: 90%;
+    }
+    
+    /* iPad container */
+    .ipad-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 85vw;
+        max-width: 350px;
+        max-height: 55vh;
+        z-index: 10;
+    }
+    
+    /* iPad screen */
+    .ipad-screen {
+        width: 93%;
+        height: 93%;
+    }
+    
+    /* Status bar */
+    .status-bar {
+        top: 6px;
+    }
+    
+    /* Stars container */
+    .stars-container {
+        top: 30px;
+        height: calc(100% - 30px);
+        padding: 15px 10px;
+        gap: 10px;
+    }
+    
+    /* Étoiles plus petites sur mobile */
+    .star {
+        width: 70px;
+        height: 70px;
+    }
+    
+    /* Footer */
+    .footer-signature {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 11px;
+        width: 100%;
+        text-align: center;
+        z-index: 100;
+    }
+    
+    /* Popup gift card */
+    .gift-card {
+        width: 85vw;
+        max-width: 332px;
+        height: auto;
+        aspect-ratio: 332 / 248;
+        padding: 55px 55px;
+    }
+    
+    .gift-text {
+        font-size: 16px;
+        line-height: 15px;
+    }
+    
+    /* Bouton fermer popup */
+    .close-popup {
+        top: -45px;
+        width: 40px;
+        height: 40px;
+        font-size: 28px;
+    }
+    
+    /* Papier note sur mobile */
     .paper-note {
         width: 85vw;
         max-width: 400px;
         height: auto;
         aspect-ratio: 1 / 1;
-        padding: 65px 45px 85px 45px;  /* Padding égal */
+        padding: 65px 45px 85px 45px;
     }
     
     .note-text {
         font-size: 15px;
         line-height: 18px;
-        text-align: center;
-        margin: 0;
     }
     
     .close-message {
@@ -696,8 +679,27 @@ body {
     }
 }
 
-/* Pour petits écrans */
+/* Pour les très petits écrans */
 @media (max-width: 380px) {
+    .main-title {
+        font-size: 24px;
+        line-height: 28px;
+    }
+    
+    .star {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .gift-card {
+        padding: 45px 45px;
+    }
+    
+    .gift-text {
+        font-size: 14px;
+        line-height: 13px;
+    }
+    
     .paper-note {
         width: 80vw;
         max-width: 320px;
@@ -707,7 +709,27 @@ body {
     .note-text {
         font-size: 13px;
         line-height: 16px;
-        text-align: center;
-        margin: 0;
+    }
+}
+
+/* Pour petits écrans en hauteur (iPhone SE, etc.) */
+@media (max-height: 700px) {
+    .main-title {
+        top: 5vh;
+        font-size: clamp(20px, 4vw, 24px);
+    }
+    
+    .subtitle {
+        top: 14vh;
+        font-size: 10px;
+    }
+    
+    .ipad-container {
+        max-height: 50vh;
+    }
+    
+    .footer-signature {
+        font-size: 10px;
+        bottom: 5px;
     }
 }
