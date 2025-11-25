@@ -375,6 +375,7 @@ body {
         max-width: 380px;
         height: auto;
         aspect-ratio: 380 / 535;
+        z-index: 10;  /* ✅ AJOUTE CETTE LIGNE */
     }
     
     /* iPad screen */
@@ -467,7 +468,7 @@ body {
 .snowflake {
     position: fixed;
     top: -10px;
-    z-index: 9999;
+    z-index: 1;  /* ✅ Passe en arrière-plan */
     user-select: none;
     cursor: default;
     animation-name: snowfall;
