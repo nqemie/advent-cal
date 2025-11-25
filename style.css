@@ -694,24 +694,3 @@ body {
     }
 }
 
-/* Pour petits écrans en hauteur (iPhone SE, etc.) */
-@media (max-height: 700px) {
-    .main-title {
-        top: 5vh;
-        font-size: clamp(20px, 4vw, 24px);
-    }
-    
-    .subtitle {
-        top: 14vh;
-        font-size: 10px;
-    }
-    
-    .ipad-container {
-        max-height: 50vh;
-    }
-    
-    .footer-signature {
-        font-size: 10px;
-        bottom: 5px;
-    }
-}
