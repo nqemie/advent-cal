@@ -11,9 +11,9 @@
         <!-- Signature en haut à gauche --> 
         <div class="signature">@nqemie</div>
         
-        <!-- Enveloppe décoration en haut à droite -->
-        <img src="images/envelope-decoration.png" alt="Envelope" class="envelope-decoration">
-        
+        <!-- Enveloppe décoration en haut à droite - CLIQUABLE -->
+        <img src="images/envelope-decoration.png" alt="Envelope" class="envelope-decoration" id="envelopeBtn">
+
         <!-- Titre principal -->
         <h1 class="main-title">Mathias'<br>Advent<br>Calendar</h1>
         
@@ -125,5 +125,16 @@
     </div>
     
     <script src="script.js"></script>
+
+    <!-- Popup message secret -->
+    <div class="message-overlay" id="messagePopup">
+        <div class="message-content">
+            <button class="close-message" id="closeMessage">&times;</button>
+            <div class="paper-note">
+                <p class="note-text">Coucou Monsieur Caca,<br>Je voulais absolument te faire un calendrier de l'avent, mais bon cette année c'est compliqué.<br>J'espère que ça te plaira quand même... 💕</p>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
