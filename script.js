@@ -110,3 +110,33 @@ function createSnowflakes() {
 // Lancer la neige quand la page est chargée
 window.addEventListener('load', createSnowflakes);
 
+// POPUP MESSAGE SECRET (enveloppe)
+const envelopeBtn = document.getElementById('envelopeBtn');
+const messagePopup = document.getElementById('messagePopup');
+const closeMessage = document.getElementById('closeMessage');
+
+// Ouvrir le message au clic sur l'enveloppe
+envelopeBtn.addEventListener('click', function() {
+    messagePopup.classList.add('active');
+});
+
+// Fermer le message au clic sur le bouton
+closeMessage.addEventListener('click', function() {
+    messagePopup.classList.remove('active');
+});
+
+// Fermer le message au clic en dehors
+messagePopup.addEventListener('click', function(e) {
+    if (e.target === messagePopup) {
+        messagePopup.classList.remove('active');
+    }
+});
+
+// Fermer avec la touche Escape
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && messagePopup.classList.contains('active')) {
+        messagePopup.classList.remove('active');
+    }
+});
+
+
