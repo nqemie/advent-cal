@@ -32,7 +32,7 @@ const gifts = {
     21: "Un aller retour en train Paris-Metz",
     22: "Soirée/Après-midi gaming",
     23: "Un beau bouquet pour une belle princesse",
-    24: "Une super gourde et d'autres cadeaux à découvrir plus tard"
+    24: "Pleins de cadeaux que tu découvriras bientôt"
 };
 
 // Fonction pour vérifier si une case peut être ouverte
