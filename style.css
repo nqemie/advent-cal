@@ -279,31 +279,30 @@ body {
     }
 }
 
-/* Bouton fermer */
+/* Bouton fermer - VERSION SOBRE */
 .close-popup {
     position: absolute;
-    top: -50px;
-    right: 0px;
-    background: #EBDDDD;
+    top: -40px;
+    right: -10px;
+    background: transparent;
     border: none;
-    font-size: 35px;
-    color: #502D2D;
+    font-size: 40px;
+    font-weight: 300;
+    color: rgba(80, 45, 45, 0.5);
     cursor: pointer;
     line-height: 1;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.2s ease;
+    transition: all 0.3s ease;
     z-index: 10;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .close-popup:hover {
-    transform: scale(1.15) rotate(90deg);
-    background: #e0c9c9;
+    color: #502D2D;
+    transform: scale(1.1);
 }
 
 /* Contenu du popup */
@@ -372,31 +371,30 @@ body {
     }
 }
 
-/* Bouton fermer message */
+/* Bouton fermer message - VERSION SOBRE */
 .close-message {
     position: absolute;
-    top: -50px;
-    right: 0px;
-    background: #EBDDDD;
+    top: -40px;
+    right: -10px;
+    background: transparent;
     border: none;
-    font-size: 35px;
-    color: #502D2D;
+    font-size: 40px;
+    font-weight: 300;
+    color: rgba(80, 45, 45, 0.5);
     cursor: pointer;
     line-height: 1;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.2s ease;
+    transition: all 0.3s ease;
     z-index: 10;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .close-message:hover {
-    transform: scale(1.15) rotate(90deg);
-    background: #e0c9c9;
+    color: #502D2D;
+    transform: scale(1.1);
 }
 
 /* Papier avec message */
