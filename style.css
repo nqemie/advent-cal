@@ -279,20 +279,21 @@ body {
     }
 }
 
-/* Bouton fermer - VERSION ULTRA DISCRÈTE */
+/* Bouton fermer - VERSION BORDURE FINE */
 .close-popup {
     position: absolute;
-    top: -35px;
+    top: -45px;
     right: 0px;
     background: transparent;
-    border: none;
-    font-size: 32px;
+    border: 1px solid rgba(80, 45, 45, 0.3);
+    font-size: 28px;
     font-weight: 300;
-    color: rgba(80, 45, 45, 0.4);
+    color: #502D2D;
     cursor: pointer;
     line-height: 1;
-    width: 35px;
-    height: 35px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -301,9 +302,9 @@ body {
 }
 
 .close-popup:hover {
-    background: rgba(235, 221, 221, 0.6);
-    border-radius: 50%;
-    color: #502D2D;
+    border-color: #502D2D;
+    background: rgba(235, 221, 221, 0.3);
+    transform: rotate(90deg);
 }
 
 /* Contenu du popup */
@@ -375,17 +376,18 @@ body {
 /* Bouton fermer message - VERSION SOBRE */
 .close-message {
     position: absolute;
-    top: -35px;
+    top: -45px;
     right: 0px;
     background: transparent;
-    border: none;
-    font-size: 32px;
+    border: 1px solid rgba(80, 45, 45, 0.3);
+    font-size: 28px;
     font-weight: 300;
-    color: rgba(80, 45, 45, 0.4);
+    color: #502D2D;
     cursor: pointer;
     line-height: 1;
-    width: 35px;
-    height: 35px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -394,9 +396,9 @@ body {
 }
 
 .close-message:hover {
-    background: rgba(235, 221, 221, 0.6);
-    border-radius: 50%;
-    color: #502D2D;
+    border-color: #502D2D;
+    background: rgba(235, 221, 221, 0.3);
+    transform: rotate(90deg);
 }
 
 /* Papier avec message */
@@ -630,12 +632,12 @@ body {
         line-height: 15px;
     }
     
-    /* Bouton fermer popup */
+    /* Bouton fermer popup - mobile sobre */
     .close-popup {
-        top: -45px;
-        width: 40px;
-        height: 40px;
-        font-size: 28px;
+        top: -35px;
+        width: 35px;
+        height: 35px;
+        font-size: 30px;
     }
     
     /* Papier note sur mobile */
@@ -653,9 +655,9 @@ body {
     }
     
     .close-message {
-        top: -45px;
-        width: 40px;
-        height: 40px;
+        top: -35px;
+        width: 35px;
+        height: 35px;
         font-size: 30px;
     }
 }
