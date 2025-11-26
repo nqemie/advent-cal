@@ -521,6 +521,147 @@ body {
     animation-duration: 12s;
 }
 
+/* ========== CADENAS ET POPUP VERROUILLAGE ========== */
+
+/* Cadenas sur les étoiles verrouillées */
+.star.locked {
+    position: relative;
+    opacity: 0.6;
+}
+
+.star.locked::after {
+    content: '🔒';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.star.locked:hover {
+    transform: scale(1.05);
+    opacity: 0.7;
+}
+
+/* Popup verrouillage */
+.locked-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2500;
+    justify-content: center;
+    align-items: center;
+}
+
+.locked-overlay.active {
+    display: flex;
+}
+
+.locked-content {
+    background: #FFFFFF;
+    border-radius: 28px;
+    width: 312px;
+    min-width: 280px;
+    max-width: 90%;
+    padding: 24px 24px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    animation: lockedAppear 0.3s ease;
+}
+
+@keyframes lockedAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.locked-title {
+    font-family: 'Oliver', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #1D1B20;
+    margin: 0;
+    width: 100%;
+}
+
+.locked-text {
+    font-family: 'Creato Display', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    color: #49454F;
+    margin: 0;
+    width: 100%;
+}
+
+#countdown {
+    font-weight: 600;
+    color: #633B48;
+    font-size: 16px;
+}
+
+.locked-button {
+    align-self: flex-end;
+    background: transparent;
+    border: none;
+    font-family: 'Oliver', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    color: #633B48;
+    padding: 10px 16px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    margin-top: 12px;
+}
+
+.locked-button:hover {
+    background: rgba(99, 59, 72, 0.1);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .star.locked::after {
+        font-size: 22px;
+    }
+    
+    .locked-content {
+        width: 90%;
+        max-width: 320px;
+    }
+    
+    .locked-title {
+        font-size: 22px;
+        line-height: 28px;
+    }
+    
+    .locked-text {
+        font-size: 13px;
+        line-height: 18px;
+    }
+}
+
+
 /* RESPONSIVE MOBILE */
 @media (max-width: 768px) {
     body {
