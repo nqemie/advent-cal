@@ -12,7 +12,7 @@ const gifts = {
     1: "Pleins de bêtises pour manger à Metz",
     2: "Bon pour une soirée coquillettes",
     3: "Massage de 30 minutes par moi",
-    4: "Bon pour une soirée \"IT takes Two\"",
+    4: "Bon pour une soirée \"It takes Two\"",
     5: "Soirée chocolat chaud, Pop Corn et film de ton choix",
     6: "Bon pour un petit déjeuner au lit",
     7: "Encore des bêtises pour dans le train",
