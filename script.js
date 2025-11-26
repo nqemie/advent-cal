@@ -2,7 +2,10 @@
 const stars = document.querySelectorAll('.star');
 const popup = document.getElementById('popup');
 const closePopup = document.getElementById('closePopup');
-const popupGift = document.querySelector('.popup-gift'); 
+const popupGift = document.querySelector('.popup-gift');
+const lockedPopup = document.getElementById('lockedPopup');
+const closeLocked = document.getElementById('closeLocked');
+const countdownElement = document.getElementById('countdown');
 
 // Textes des cadeaux
 const gifts = {
@@ -32,53 +35,125 @@ const gifts = {
     24: "Une super gourde et d'autres cadeaux à découvrir plus tard"
 };
 
-// Ajouter un événement click à chaque étoile
+// Fonction pour vérifier si une case peut être ouverte
+function canOpenDay(day) {
+    const now = new Date();
+    const currentYear = now.getFullYear();
+    const currentMonth = now.getMonth(); // 0 = janvier, 11 = décembre
+    
+    // Si on est en décembre
+    if (currentMonth === 11) {
+        const unlockDate = new Date(currentYear, 11, day, 0, 0, 0); // Minuit du jour J
+        return now >= unlockDate;
+    }
+    
+    // Si on est après décembre (janvier ou plus), tout est déverrouillé
+    if (currentMonth > 11 || (currentMonth === 0 && now.getFullYear() > currentYear)) {
+        return true;
+    }
+    
+    // Si on est avant décembre, tout est verrouillé
+    return false;
+}
+
+// Fonction pour calculer le temps restant jusqu'à l'ouverture
+function getTimeUntilUnlock(day) {
+    const now = new Date();
+    const currentYear = now.getFullYear();
+    const unlockDate = new Date(currentYear, 11, day, 0, 0, 0); // Décembre = mois 11
+    
+    const diff = unlockDate - now;
+    
+    if (diff <= 0) return "maintenant !";
+    
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    
+    if (days > 0) {
+        return `${days} jour${days > 1 ? 's' : ''} et ${hours}h`;
+    } else if (hours > 0) {
+        return `${hours}h et ${minutes}min`;
+    } else {
+        return `${minutes} minute${minutes > 1 ? 's' : ''}`;
+    }
+}
+
+// Ajouter les cadenas et gérer les clics
 stars.forEach(star => {
+    const day = parseInt(star.getAttribute('data-day'));
+    
+    // Vérifier si la case peut être ouverte
+    if (!canOpenDay(day)) {
+        star.classList.add('locked');
+    }
+    
     star.addEventListener('click', function() {
         const day = parseInt(this.getAttribute('data-day'));
+        
+        // Si la case est verrouillée
+        if (!canOpenDay(day)) {
+            const timeLeft = getTimeUntilUnlock(day);
+            countdownElement.textContent = timeLeft;
+            lockedPopup.classList.add('active');
+            return;
+        }
+        
+        // Si la case est déverrouillée, afficher le cadeau
         const giftText = gifts[day];
         
-        // Vider le contenu précédent
         popupGift.innerHTML = '';
         
-        // Créer le container de la carte
         const giftCard = document.createElement('div');
         giftCard.className = 'gift-card';
         
-        // Créer le texte
         const giftTextElement = document.createElement('p');
         giftTextElement.className = 'gift-text';
         giftTextElement.textContent = giftText;
         
-        // Ajouter le texte à la carte
         giftCard.appendChild(giftTextElement);
-        
-        // Ajouter la carte au popup
         popupGift.appendChild(giftCard);
         
-        // Afficher le popup
         popup.classList.add('active');
     });
 });
 
-// Fermer le popup au clic sur le bouton
+// Fermer le popup cadeau
 closePopup.addEventListener('click', function() {
     popup.classList.remove('active');
 });
 
-// Fermer le popup au clic en dehors
 popup.addEventListener('click', function(e) {
     if (e.target === popup) {
         popup.classList.remove('active');
     }
 });
 
-// Fermer avec la touche Escape
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && popup.classList.contains('active')) {
-        popup.classList.remove('active');
+// Fermer le popup verrouillage
+closeLocked.addEventListener('click', function() {
+    lockedPopup.classList.remove('active');
+});
+
+lockedPopup.addEventListener('click', function(e) {
+    if (e.target === lockedPopup) {
+        lockedPopup.classList.remove('active');
     }
 });
+
+// Fermer avec la touche Escape
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        if (popup.classList.contains('active')) {
+            popup.classList.remove('active');
+        }
+        if (lockedPopup.classList.contains('active')) {
+            lockedPopup.classList.remove('active');
+        }
+    }
+});
+
+// Reste du code (neige, enveloppe, etc.) reste identique...
+
 
 // EFFET NEIGE
 function createSnowflakes() {
