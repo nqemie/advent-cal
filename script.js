@@ -10,8 +10,8 @@ const countdownElement = document.getElementById('countdown');
 // Textes des cadeaux
 const gifts = {
     1: "Pleins de bêtises pour manger à Metz",
-    2: "Bon pour une soirée coquillettes",
-    3: "Massage de 30 minutes par moi",
+    2: "Bon pour une soirée coquillettes en amoureux",
+    3: "Massage de 30 minutes tout nu par moi",
     4: "Bon pour une soirée \"It takes Two\"",
     5: "Soirée chocolat chaud, Pop Corn et film de ton choix",
     6: "Bon pour un petit déjeuner au lit",
@@ -22,14 +22,14 @@ const gifts = {
     11: "Bon pour une journée où je ne touche pas à mon téléphone",
     12: "Bon pour une soirée où tu m'apprends à jouer à LoL",
     13: "Carte cadeau Steam 10-20€",
-    14: "Livre de rando pour être un vrai randonneur",
+    14: "A MODIFIER",
     15: "Soirée Pépé Chicken Tenders",
     16: "Une autre soirée chocolat chaud, films & pop corn",
     17: "Bon pour une rando surprise",
     18: "Brunch maison pancake, bacon, etc",
     19: "Minecraft date night",
-    20: "Massage tout nu",
-    21: "Un aller retour en train Paris-Metz",
+    20: "Massage, gommage, spa à la maison tout nu",
+    21: "Un aller retour en train Paris-Metz ou Paris-Vichy",
     22: "Soirée/Après-midi gaming",
     23: "Un beau bouquet pour une belle princesse",
     24: "Pleins de cadeaux que tu découvriras bientôt"
