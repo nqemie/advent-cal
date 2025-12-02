@@ -11,8 +11,8 @@ const countdownElement = document.getElementById('countdown');
 const gifts = {
     1: "Pleins de bêtises pour manger à Metz",
     2: "Bon pour une soirée coquillettes en amoureux",
-    3: "Massage de 30 minutes tout nu par moi",
-    4: "Un livre sur les randonnées pour être un vrai randonneur",
+    3: "Surprise, surprise, tu verras ce soir : c'est un petit livre",
+    4: "Massage de 30 minutes tout nu par moi",
     5: "Soirée chocolat chaud, Pop Corn et film de ton choix",
     6: "Bon pour un petit déjeuner au lit",
     7: "Encore des bêtises pour dans le train",
